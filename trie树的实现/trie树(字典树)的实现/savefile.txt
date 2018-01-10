@@ -1,0 +1,140 @@
+单词：a
+出现次数         4 次
+单词：as
+出现次数         3 次
+单词：be
+出现次数         3 次
+单词：if
+出现次数         1 次
+单词：in
+出现次数         1 次
+单词：is
+出现次数         1 次
+单词：no
+出现次数         1 次
+单词：of
+出现次数         1 次
+单词：to
+出现次数         7 次
+单词：we
+出现次数         3 次
+单词：all
+出现次数         1 次
+单词：and
+出现次数         5 次
+单词：but
+出现次数         1 次
+单词：can
+出现次数         1 次
+单词：for
+出现次数         2 次
+单词：our
+出现次数         2 次
+单词：see
+出现次数         2 次
+单词：the
+出现次数         3 次
+单词：back
+出现次数         1 次
+单词：born
+出现次数         1 次
+单词：each
+出现次数         1 次
+单词：from
+出现次数         1 次
+单词：seem
+出现次数         1 次
+单词：some
+出现次数         1 次
+单词：time
+出现次数         1 次
+单词：true
+出现次数         1 次
+单词：view
+出现次数         1 次
+单词：argue
+出现次数         1 次
+单词：focus
+出现次数         1 次
+单词：forth
+出现次数         1 次
+单词：needs
+出现次数         1 次
+单词：other
+出现次数         1 次
+单词：reach
+出现次数         1 次
+单词：shift
+出现次数         1 次
+单词：start
+出现次数         1 次
+单词：there
+出现次数         1 次
+单词：making
+出现次数         1 次
+单词：mutual
+出现次数         2 次
+单词：others
+出现次数         1 次
+单词：people
+出现次数         1 次
+单词：should
+出现次数         2 次
+单词：solved
+出现次数         1 次
+单词：benefit
+出现次数         2 次
+单词：counter
+出现次数         1 次
+单词：demands
+出现次数         2 次
+单词：instead
+出现次数         1 次
+单词：outcome
+出现次数         1 次
+单词：problem
+出现次数         2 次
+单词：process
+出现次数         1 次
+单词：conclude
+出现次数         1 次
+单词：conflict
+出现次数         1 次
+单词：creative
+出现次数         1 次
+单词：interest
+出现次数         1 次
+单词：defeating
+出现次数         2 次
+单词：difficult
+出现次数         1 次
+单词：effective
+出现次数         1 次
+单词：everybody
+出现次数         1 次
+单词：painfully
+出现次数         1 次
+单词：producing
+出现次数         1 次
+单词：likelihood
+出现次数         1 次
+单词：negotiates
+出现次数         1 次
+单词：opposition
+出现次数         1 次
+单词：settlement
+出现次数         1 次
+单词：collaborate
+出现次数         1 次
+单词：negotiation
+出现次数         2 次
+单词：negotiators
+出现次数         1 次
+单词：embarrassing
+出现次数         1 次
+单词：satisfaction
+出现次数         1 次
+单词：complementary
+出现次数         1 次
+文中出现最多的单词是: to
+出现次数         7 次
