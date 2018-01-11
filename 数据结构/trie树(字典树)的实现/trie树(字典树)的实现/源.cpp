@@ -7,6 +7,7 @@
 #define ALP_NUM 28
 using namespace std;
 const int OK = 1;
+int filecount = 0;
 typedef struct prietree {
 	char character;
 	bool terminal;
@@ -15,6 +16,7 @@ typedef struct prietree {
 	string str;
 	struct prietree * children[ALP_NUM];
 }Trietree, *TrietreeNode;
+
 
 TrietreeNode TrieInit()
 {
@@ -41,8 +43,8 @@ int TrieInsert(TrietreeNode & T, string InsStr)
 		if (InsStr[i] == ' ') {
 			break;
 		}
-		cout << "正在加载中..." << endl;
-		cout << "我正在插入" << InsStr[i] << endl;
+//		cout << "正在加载中..." << endl;
+	//	cout << "我正在插入" << InsStr[i] << endl;
 		//	system("pause");
 		if (InsNode->children[InsStr[i] - 'a'] == NULL)
 		{
@@ -153,9 +155,15 @@ struct maxstr {
 
 void travelTrie(TrietreeNode Tree)
 {
+	//输出多个文件
+	char  temp[10];
+	string savefileStr = "savafile";
+	_itoa_s(filecount, temp, 2, 10);
+	savefileStr = savefileStr + temp + ".txt";
+//	cout << savefileStr << endl;
 	string str;
 	maxstr MaxStr;
-	ofstream savefile("savefile.txt");
+	ofstream savefile(savefileStr);
 	MaxStr.count = 0;
 	MaxStr.str = "";
 	LinkQueue Q;
@@ -164,15 +172,14 @@ void travelTrie(TrietreeNode Tree)
 	EnQueue(Q, travelMan);
 	while (!EmptyQueue(Q)) {
 		DeQueue(Q, travelMan);
-		if (travelMan->str != " ");
 		if (travelMan->terminal) {
 			//			cout << travelMan->str << endl;
-
-			cout << "单词：" << travelMan->str << endl;
-			cout << "出现次数";
-			cout << setw(10) << travelMan->count << " 次" << endl;
-			cout << endl;
-			//保存在文件中
+		//	界面输出
+			//cout << "单词：" << travelMan->str << endl;
+			//cout << "出现次数";
+			//cout << setw(10) << travelMan->count << " 次" << endl;
+			//cout << endl;
+			////保存在文件中
 			savefile << "单词：" << travelMan->str << endl;
 			savefile << "出现次数";
 			savefile << setw(10) << travelMan->count << " 次" << endl;
@@ -198,10 +205,60 @@ void travelTrie(TrietreeNode Tree)
 
 }
 
+void delet() {
+	
+	remove("workdata.txt");
+	for (int num = 0;;num++) {
+
+		char  temp[10];
+		string savefileStr = "savafile";
+		_itoa_s(num, temp, 2, 10);
+		savefileStr = savefileStr + temp + ".txt";
+		cout << savefileStr<<endl;
+		ifstream showfile(savefileStr);
+		if (!showfile.is_open()) {
+			break;
+		}
+		else {
+			showfile.close();
+		}
+		remove(savefileStr.data());
+	}
+	filecount = 0;
+	
+}
+
+void showContent(int num) {
+	num = num - 1;
+	char  temp[10];
+	string savefileStr = "savafile";
+	_itoa_s(num, temp, 2, 10);
+	savefileStr = savefileStr + temp + ".txt";
+	ifstream showfile(savefileStr);
+	system("cls");
+	cout << "正在查看第"<<num+1<<"个文件"<< endl;
+	if (!showfile.is_open()) {
+		cout << "原文件打开失败！" << endl;
+		system("pause");
+		return windows();
+	}
+
+	if (showfile) {
+		while (!showfile.eof()) {
+			string outString;
+			getline(showfile, outString);
+			cout << outString<<endl;
+		}
+	}
+	system("pause");
+	
+}
+
 string ToLowerString(string str) {
 	for (unsigned int i = 0; i < str.length(); i++) {
 		str[i] = tolower(str[i]);
 	}
+
 	return str;
 }
 
@@ -238,7 +295,7 @@ void loading(TrietreeNode Tree, string str) {
 			myfile >> firsthandle;
 			//			cout << firsthandle << " ";
 			firsthandle = translate(firsthandle); //去掉标点符号
-			cout << "原字符串转换为：" << firsthandle << endl;
+		//	cout << "原字符串转换为：" << firsthandle << endl;
 			handlefile << firsthandle;
 			system("cls");
 		}
@@ -252,7 +309,6 @@ void loading(TrietreeNode Tree, string str) {
 		cout << "处理文件打开失败" << endl;
 	}
 	if (workfile) {
-		Sleep(1000);
 		system("cls");
 		while (!workfile.eof()) {
 			workfile >> temp;
@@ -275,11 +331,13 @@ void windows()
 	TrietreeNode Tree;
 	char ch;
 	string searchStr;
+	int num;
 	Tree = TrieInit();
 	cout << "您好,欢迎使用我的字典树！" << endl;
 	cout << "请输入要打开的文本:" << endl;
 	cin >> str;
 	loading(Tree, str);
+	travelTrie(Tree);
 	system("cls");
 	ch = '1';
 	while (ch != '0') {
@@ -287,6 +345,7 @@ void windows()
 		cout << "您正在处理文件：" << str << endl;
 		cout << "1.单词查询" << endl;
 		cout << "2.单词统计" << endl;
+		cout << "3.继续插入" << endl;
 		cout << "0.清除记录" << endl;
 		cin >> ch;
 		switch (ch)
@@ -304,10 +363,17 @@ void windows()
 			}
 			break;
 		case '2':
+			cout << "你想查看第几个文件?" << endl;
+			cin >> num;
+			showContent(num);
 			system("cls");
-			travelTrie(Tree);
 			break;
-		case '0': return windows();
+		case '3': {
+			windows();
+		}
+		case '0':
+			delet();
+			windows();
 			break;
 		default:
 			cout << "输入错误请重新输入!" << endl;
@@ -319,6 +385,7 @@ void windows()
 	travelTrie(Tree);
 	system("pause");
 }
+
 int main()
 {
 	windows();
