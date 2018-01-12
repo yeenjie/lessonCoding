@@ -1,0 +1,6 @@
+﻿  stack.cpp
+d:\lessoncoding\lessoncoding\数据结构\停车系统(栈的简单实现)\停车系统(栈的简单实现)\stack.cpp(183): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+d:\lessoncoding\lessoncoding\数据结构\停车系统(栈的简单实现)\停车系统(栈的简单实现)\stack.cpp(192): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+d:\lessoncoding\lessoncoding\数据结构\停车系统(栈的简单实现)\停车系统(栈的简单实现)\stack.cpp(353): warning C4101: “time”: 未引用的局部变量
+  停车系统(栈的简单实现).vcxproj -> D:\lessonCoding\lessonCoding\数据结构\停车系统(栈的简单实现)\Debug\停车系统(栈的简单实现).exe
+  停车系统(栈的简单实现).vcxproj -> D:\lessonCoding\lessonCoding\数据结构\停车系统(栈的简单实现)\Debug\停车系统(栈的简单实现).pdb (Partial PDB)
