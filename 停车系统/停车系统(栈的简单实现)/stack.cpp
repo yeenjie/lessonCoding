@@ -1,7 +1,7 @@
 #include<iostream>
 #include<malloc.h>
 #include<time.h>
-#include<Windows.h>
+#include<windows.h>
 #define OK 1
 #define Parking_Space_NUM 100
 #define Add_Space 20

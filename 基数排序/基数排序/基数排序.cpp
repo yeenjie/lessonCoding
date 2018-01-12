@@ -31,6 +31,7 @@ void RadixSort(int *list, int begin, int end, int digit) {
 			count[i] = count[i] + count[i - 1];
 		}
 
+		//ÅÅĞòÎÈ¶¨ĞÔ
 		for (int i = end; i >= begin; i--) {
 			nd = getDgit(list[i], d);
 			bucket[count[nd] - 1] = list[i];
