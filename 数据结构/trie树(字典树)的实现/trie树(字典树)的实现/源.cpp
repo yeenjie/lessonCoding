@@ -34,6 +34,17 @@ TrietreeNode TrieInit()
 
 void windows();
 
+
+int hideHandle() {
+	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cci;
+	GetConsoleCursorInfo(hOut, &cci);//获取光标信息
+	cci.bVisible = FALSE;//隐藏光标
+	SetConsoleCursorInfo(hOut, &cci);//设置光标信息
+	return 0;
+}
+
+
 int TrieInsert(TrietreeNode & T, string InsStr)
 {   //插入一个单词
 	TrietreeNode InsNode = T;
@@ -43,7 +54,7 @@ int TrieInsert(TrietreeNode & T, string InsStr)
 		if (InsStr[i] == ' ') {
 			break;
 		}
-//		cout << "正在加载中..." << endl;
+		cout << "正在加载中..." << endl;
 	//	cout << "我正在插入" << InsStr[i] << endl;
 		//	system("pause");
 		if (InsNode->children[InsStr[i] - 'a'] == NULL)
@@ -52,7 +63,7 @@ int TrieInsert(TrietreeNode & T, string InsStr)
 		}
 		InsNode = InsNode->children[InsStr[i] - 'a'];
 	}
-	//	cout << InsStr << endl;
+		cout << InsStr << endl;
 	//	system("pause");
 	if (InsNode != T) {
 		//解决传入空string的BUG
@@ -160,7 +171,8 @@ void travelTrie(TrietreeNode Tree)
 	string savefileStr = "savafile";
 	_itoa_s(filecount, temp, 2, 10);
 	savefileStr = savefileStr + temp + ".txt";
-//	cout << savefileStr << endl;
+	filecount++;
+	cout << savefileStr << endl;
 	string str;
 	maxstr MaxStr;
 	ofstream savefile(savefileStr);
@@ -295,7 +307,7 @@ void loading(TrietreeNode Tree, string str) {
 			myfile >> firsthandle;
 			//			cout << firsthandle << " ";
 			firsthandle = translate(firsthandle); //去掉标点符号
-		//	cout << "原字符串转换为：" << firsthandle << endl;
+			cout << "原字符串转换为：" << firsthandle << endl;
 			handlefile << firsthandle;
 			system("cls");
 		}
@@ -388,6 +400,7 @@ void windows()
 
 int main()
 {
+	hideHandle();
 	windows();
 
 	return 0;

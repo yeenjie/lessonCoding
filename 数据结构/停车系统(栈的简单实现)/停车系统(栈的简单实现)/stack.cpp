@@ -255,7 +255,7 @@ int priStack(Sqstack Parking,int page) {
 			appGotoXY(15 * (i % lineNum), 3 + 6 * (i / lineNum));
 			cout << setw(7) << "  ¨q¨T¨T¨r" << endl;
 			appGotoXY(15 * (i % lineNum), 4 + 6 * (i / lineNum));
-			cout  << setw(7) << Parking.base[i].CarId <<endl;
+			cout  <<" "<< setw(7) << Parking.base[i].CarId <<endl;
 			appGotoXY(15 * (i % lineNum), 5 + 6 * (i / lineNum));
 			cout << setw(7) << " ¨t¡Ñ¨T¡Ñ¨s" << endl;
 			cout << " " << endl;
@@ -431,6 +431,7 @@ int hideHandle() {
 	return 0;
 }
 void loading() {
+	system("COLOR F0");
 	hideHandle();
 	Sqstack mainParking;
 	Sqstack assistParking;
